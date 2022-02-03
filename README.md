@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Welcome to plain smart contract with React 😘
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](scz.png)
 
-## Available Scripts
+before play this project you need to
 
-In the project directory, you can run:
+- install truffle,Ganache (https://trufflesuite.com/ganache/)
 
-### `yarn start`
+to run the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- npm install
+- run Ganache and crate workspace (just follow this
+  link https://trufflesuite.com/docs/ganache/workspaces/creating-workspaces.html)
+- connect between your wallet and browser
+  via [Metamask extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)
+- at root project run ``` truffle migrate --reset ```
+- run ```truffle console```
+- paste ``` const instance = await SCZ.deployed();```
+- transfer eth from another accounts to yours to increase your current balance
+  by ``` instance.addFunds({from: accounts[1], value: "3000000000000000000"}) ``` ``` 3000000000000000000 ``` is Wei
+  format it's equal 3 Ether you can try to play the Wei -> Ether converter it in [this](https://eth-converter.com/)
+- all of 3 steps above you need to do within ```truffle console```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+if there is anything you want for this project i will create article how to set up for this project
+at [Medium](https://sirawit0676.medium.com/)
 
-### `yarn test`
+enjoy kub :3 [Sirawich Voungchuy](https://github.com/SirawichDev)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
