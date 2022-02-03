@@ -1,24 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect, useState } from "react";
+import Web3 from "web3";
+import detectEthereumProvider from "@metamask/detect-provider";
+import { provider, Providers } from "web3-core";
+import "./App.css";
+interface Web3Props {
+  provider: Providers;
+  web3: provider;
+}
 function App() {
+  const [web3Api, setWeb3Api] = useState<Web3Props | any>({
+    provider: null,
+    web3: null,
+  });
+  const setAccountListener = (provider: any) => {
+    provider.on("accountsChanged", (x: any) => window.location.reload());
+    provider.on("chainChanged", (x: any) => window.location.reload());
+  };
+  const [account, setAccount] = useState<Array<string>>();
+  const [errorMsg, setErrorMsg] = useState<string>("");
+  useEffect(() => {
+    const initialWeb3 = async () => {
+      let provider: any = await detectEthereumProvider();
+      if (provider) {
+        setAccountListener(provider);
+        setWeb3Api({ web3: new Web3(provider), provider });
+      } else {
+        setErrorMsg("Please install Metamask");
+      }
+    };
+    initialWeb3();
+  }, []);
+  useEffect(() => {
+    const getAcc = async () => {
+      const accounts = await (web3Api as any).web3?.eth.getAccounts();
+      setAccount(accounts[0]);
+    };
+    web3Api.web3 && getAcc();
+  }, [web3Api, web3Api.web3]);
+  console.log("web3Api", web3Api);
+  const MetamaskConnect = async () => {
+    await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="bubble moveup-1"></div>
+      <div className="bubble moveup-2"></div>
+      <div className="container">
+        <img
+          alt="foxfox"
+          src="https://i.pinimg.com/736x/4a/8f/a6/4a8fa666db768b82c7b74bd21904bbe2.jpg"
+          height="250px"
+        />
+        {errorMsg && <h3 className="error">{errorMsg}</h3>}
+        {account && (
+          <h3>
+            Current Account is <span className="account">{account}</span>
+          </h3>
+        )}
+        <h1>Current Balance: 11 ETH</h1>
+        {!!account ? (
+          <p className="success">Connected</p>
+        ) : (
+          <button onClick={MetamaskConnect}>Connect Metamask account</button>
+        )}
+
+        <button onClick={MetamaskConnect}>Transfer</button>
+        <button onClick={MetamaskConnect}>Withdraw</button>
+      </div>
     </div>
   );
 }
