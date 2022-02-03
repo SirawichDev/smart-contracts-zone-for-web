@@ -7,5 +7,12 @@ export const loadContract = async (name: string, provider: Providers) => {
     const Artifact = await res.json()
     const _temp = contract(Artifact)
     _temp.setProvider(provider)
-    return await _temp.deployed()
+    let deployedContract = null
+    try {
+        deployedContract = await _temp.deployed()
+    } catch {
+        console.error("You are connected to the wrong network")
+    }
+
+    return deployedContract
 }
