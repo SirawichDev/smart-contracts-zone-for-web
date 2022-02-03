@@ -2,7 +2,7 @@
 
 ![](scz.png)
 - [X] fetch account
-- [ ] transfer
+- [ ] transfer (WIP but you can transfer manually within ```truffle console```)
 - [ ] withdraw
 
 before play this project you need to
