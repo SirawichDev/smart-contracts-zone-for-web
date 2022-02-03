@@ -81,8 +81,8 @@ function App() {
                     <button onClick={MetamaskConnect}>Connect Metamask account</button>
                 )}
 
-                <button onClick={MetamaskConnect}>Transfer</button>
-                <button onClick={MetamaskConnect}>Withdraw</button>
+                <button onClick={() => console.log('WIP')}>Transfer</button>
+                <button onClick={() => console.log('WIP')}>Withdraw</button>
             </div>
         </div>
     );
