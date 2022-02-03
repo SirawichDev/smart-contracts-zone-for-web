@@ -1,6 +1,7 @@
 # Welcome to plain smart contract with React 😘
 
 ![](scz.png)
+- [X] account connection
 - [X] fetch account
 - [ ] transfer (WIP but you can transfer manually within ```truffle console```)
 - [ ] withdraw
@@ -25,6 +26,7 @@ to run the project
   format it's equal 3 Ether you can try to play the Wei -> Ether converter it in [this](https://eth-converter.com/)
 - all of 3 steps above you need to do within ```truffle console```
 
+for the rest features,I will try to finish as soon as i can ;)
 if there is anything you want for this project i will create article how to set up for this project
 at [Medium](https://sirawit0676.medium.com/)
 
