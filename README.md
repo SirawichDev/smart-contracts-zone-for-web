@@ -1,6 +1,9 @@
 # Welcome to plain smart contract with React 😘
 
 ![](scz.png)
+- [X] fetch account
+- [ ] transfer
+- [ ] withdraw
 
 before play this project you need to
 
@@ -13,6 +16,7 @@ to run the project
   link https://trufflesuite.com/docs/ganache/workspaces/creating-workspaces.html)
 - connect between your wallet and browser
   via [Metamask extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)
+- in Metamask click add a new network tab and follow these setting ``` new rpc url: http://127.0.0.1:7545``` and ``` chain id: 1337 ``` another fields is up to you ;)
 - at root project run ``` truffle migrate --reset ```
 - run ```truffle console```
 - paste ``` const instance = await SCZ.deployed();```
