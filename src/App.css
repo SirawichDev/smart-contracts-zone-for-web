@@ -21,6 +21,9 @@
   color: red;
   font-weight: bold;
 }
+.currency {
+  text-decoration: underline;
+}
 .container > button {
   background-color: beige;
   padding: 1rem;

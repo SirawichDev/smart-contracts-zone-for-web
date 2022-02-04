@@ -3,7 +3,7 @@
 ![](scz.png)
 - [X] account connection
 - [X] fetch account
-- [ ] transfer (WIP but you can transfer manually within ```truffle console```)
+- [X] transfer (both transfer manually within ```truffle console``` command and click transfer button)
 - [ ] withdraw
 - [ ] testing
 
