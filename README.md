@@ -5,6 +5,7 @@
 - [X] fetch account
 - [ ] transfer (WIP but you can transfer manually within ```truffle console```)
 - [ ] withdraw
+- [ ] testing
 
 before play this project you need to
 
