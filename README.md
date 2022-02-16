@@ -4,7 +4,7 @@
 - [X] account connection
 - [X] fetch account
 - [X] transfer (both transfer manually within ```truffle console``` command and click transfer button)
-- [ ] withdraw
+- [X] withdraw
 - [ ] testing
 
 before play this project you need to
