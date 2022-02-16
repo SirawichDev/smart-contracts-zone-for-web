@@ -31,6 +31,8 @@ for the rest features,I will try to finish as soon as i can ;)
 if there is anything you want for this project i will create article how to set up for this project
 at [Medium](https://sirawit0676.medium.com/)
 
+here is [document]('https://solidity-by-example.org/') might be useful
+
 enjoy kub :3 [Sirawich Voungchuy](https://github.com/SirawichDev)
 
 
